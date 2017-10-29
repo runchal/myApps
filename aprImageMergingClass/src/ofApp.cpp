@@ -21,7 +21,8 @@ void ofApp::setup(){
     int pixelSum[ 360 * 240 * 3]; // this creates an array of ints that represent the number of pixel colors we would store. if this was black and white I suppose we could use just one pixel thing for grey, but this is basically creating a line of numbers? actually i realized i have no clue what is going on here. After running a cout it appears that it is creating an array of a specific size with values stored to 0
     
     for (int i = 0; i < 4; i++){
-        cout << dir.getPath(i) << endl; // this is not returning things that I want it to return
+        cout << dir.getPath(i) << endl; // this is not returning things that I want it to return.
+        // is it normal to feel like an idiot all the time when programming or is it just me
     }
     
 }
