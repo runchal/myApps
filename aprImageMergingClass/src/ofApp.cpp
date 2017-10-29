@@ -7,7 +7,7 @@ void ofApp::setup(){
     
     ofDirectory dir; // this is creating a directory variable called dir. Is this actually called a variable?
     dir.listDir("noah"); // this is pointing the directory to the folder in data with images
-    cout << dir.size() << endl; // this will list the number of images in the directory
+//    cout << dir.size() << endl; // this will list the number of images in the directory
     
     /*
      From Zach: we have a problem where the pixels of this have 8 bits, there are 8 bits for red, 8 bits for
@@ -20,10 +20,23 @@ void ofApp::setup(){
     
     int pixelSum[ 360 * 240 * 3]; // this creates an array of ints that represent the number of pixel colors we would store. if this was black and white I suppose we could use just one pixel thing for grey, but this is basically creating a line of numbers? actually i realized i have no clue what is going on here. After running a cout it appears that it is creating an array of a specific size with values stored to 0
     
-    for (int i = 0; i < 4; i++){
-        cout << dir.getPath(i) << endl; // this is not returning things that I want it to return.
-        // is it normal to feel like an idiot all the time when programming or is it just me
+    for (int i = 0; i < dir.size(); i++){
+        cout << "loading: " << dir.getPath(i) << endl; // this is not returning things that I want it to return.
+        ofImage temp; // creates a temporary ofImage to store individual pixel data in the loops
+        temp.setUseTexture(false); // this takes the temp ofImage thing and makes it not store the texture
+        temp.load(dir.getPath(i)); // this will load in each image from the path.
+        
+        /* now we want to add to the pixel sum (the value of each first pixel) by creating a for loop
+         that takes the red green and blue image, going to grab the data
+         */
     }
+    
+        // is it normal to feel like an idiot all the time when programming or is it just m
+    
+    /*
+     ofImage has texture, and texture uploads things to graphic cards and turning it off will make it not load to the graphic card and make it run faster
+     
+     */
     
 }
 
